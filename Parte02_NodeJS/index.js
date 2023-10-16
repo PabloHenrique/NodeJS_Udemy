@@ -1,7 +1,11 @@
 const express = require('express');
+const API = require('./api')
 const server = express();
+
 server.use(express.json()); //Retorno das requisições em JSON
 server.listen(3000); //Ligar servidor na porta 3000
+
+// ------------------------------------------------------ FIRST CALLS ------------------------------------------------------ //
 
 server.get('/first', (request, result) => {
     return result.send({ first: "Olá, Mundo!" })
@@ -52,4 +56,14 @@ server.delete('/deletarProduto/:id', (request, result) => {
     produtos = novosProdutos
 
     result.send({ produtos: produtos })
+});
+
+// --------------------------------------------------------- API --------------------------------------------------------- //
+
+// Acessando API //
+
+server.get('/pokemon', async (require, result) => { //Não tem tempo definido para executar
+    const { status, data } = await API.get('pokemon/1') //Enquando não tiver um retorno, NÃO prossiga
+
+    return result.json(data);
 });
