@@ -1,6 +1,7 @@
 const express = require('express');
 const API = require('./api')
 const server = express();
+const localStorage = require('localStorage');
 
 server.use(express.json()); //Retorno das requisições em JSON
 server.listen(3000); //Ligar servidor na porta 3000
@@ -59,11 +60,44 @@ server.delete('/deletarProduto/:id', (request, result) => {
 });
 
 // --------------------------------------------------------- API --------------------------------------------------------- //
-
 // Acessando API //
 
-server.get('/pokemon', async (require, result) => { //Não tem tempo definido para executar
+server.get('/pokemon', async (request, result) => { //Não tem tempo definido para executar
     const { status, data } = await API.get('pokemon/1') //Enquando não tiver um retorno, NÃO prossiga
 
-    return result.json(data);
+    try {
+        return result.send({name: data.name});
+    }
+    catch (error) {
+        return result.send({message: 'Erro!'});
+    }
+    
 });
+
+function verifyUser(req, res, next){ //Criação de um Middlewares -> Validação para as funções
+    const { email } = req.body;
+
+    if(!allUsers.find(user => user.email === email)){
+        return next();
+    }
+
+    return res.status(400).json({Failed: 'Esse e-mail já está cadastrado.'})
+}
+
+const allUsers = [];
+
+//Cadastrar
+server.post('/register-users', verifyUser, (req, res) => {
+    const user = req.body;
+    allUsers.push(user);
+
+    localStorage.setItem('users', JSON.stringify(allUsers)); //Só armazena strings inicialmente
+    return res.json({ user })
+});
+
+//Consultar
+server.get('/consultar-usuarios', (req, res) => {
+    //res.send({ allUsers: allUsers})
+    const users = JSON.parse(localStorage.getItem('users'));
+    return res.json(users);
+})
