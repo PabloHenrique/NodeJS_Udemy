@@ -1,9 +1,15 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('dotenv').config();
 const express = require('express');
+const routes = require('./routes');
+
 const app = express();
 
 app.use(express.json());
+app.use(routes);
 
-app.listen(3000, () => {
-    console.log('Server ON na porta 3000');
+const { PORT } = process.env;
+
+app.listen(PORT, () => {
+    console.log(`Servidor conectado na porta ${PORT}`);
 });
-

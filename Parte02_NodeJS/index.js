@@ -100,4 +100,4 @@ server.get('/consultar-usuarios', (req, res) => {
     //res.send({ allUsers: allUsers})
     const users = JSON.parse(localStorage.getItem('users'));
     return res.json(users);
-})
+});
