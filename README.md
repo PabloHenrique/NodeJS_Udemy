@@ -15,19 +15,19 @@ Oláa! Bem vindo!
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" height="40"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" width="40" height="40"/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" height="40"/>
-    <!-- https://devicon.dev -->
+    <!-- https://devicon.dev) -->
 </p>
 
 ## Parte 01 - Javascript
 <h4> Conhecimentos:</h4>
-<p>Operadores, variáveis, estruturas, arrays, objetos</p>
+<p>Operadores, variáveis, estruturas, arrays, objetos e funções.</p>
 <p>Métodos importantes como:</p>
 
 <ul>
     <li>reverse();</li>
     <li>forEach();</li>
     <li>splice();</li>
-    <li>reduce().</li>
+    <li>reduce();</li>
     <li>findIndex().</li>
 </ul>
 
@@ -41,15 +41,6 @@ Oláa! Bem vindo!
 
 ## Parte 02
 <h4> Conhecimentos:</h4>
+<p> Aprofundamos um pouco mais os conhecimentos. Foi colocado em prática os conceitos da Parte 01. Utilizamos o <a href="https://www.postman.com">PostMan<a> para aprender como o Node faz requições. Foram feitas solicitações de <strong>GET</strong> para obter dados, <strong>PUT</strong> para alterar, <strong>POST</strong> para inserir e por fim <strong>DELETE</strong> para excluír.</p>
 
-
-<ul>
-    <li>Métodos e funções para a manipulação de dados;</li>
-    <li>Criação e chamada de funções (def).</li>
-</ul>
-
-<p> Também, apredemos o uso das varíaveis compostas, conhecidas como <strong>Dicionários</strong> </p>
-
-<h4>Fique a vontade para ver e um pouquinho como foi esse processo de aprendizagem 😊</h4>
-
-<h5>Atualizações futuras: Desenvolver front-end para navegar entre os exercícios e desafios!</h5>
+<h5>Atualizações futuras: Parte 03 - Desenvolvendo uma API!</h5>
